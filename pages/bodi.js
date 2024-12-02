@@ -5,10 +5,10 @@ const images = document.querySelectorAll('.carousel-image');
  
 let currentIndex = 0; 
  
-function updateCarousel() { 
-    const width = images[0].clientWidth; 
-    track.style.transform = translateX(-${currentIndex * width}px); 
-} 
+// function updateCarousel() { 
+//     const width = images[0].clientWidth; 
+//     track.style.transform = translateX(-${currentIndex * width}px); 
+// } 
  
  
 nextButton.addEventListener('click', () => { 
