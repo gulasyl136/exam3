@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.tr h1{
+    transition: 5s;
+color: rgb(226, 59, 59);}
+.tr:hover{
+    transform: scale(1,2);
+    
+}
+nav ul li ul{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    width: 1920px;
+    background-color: #2D3242;
+    margin-top: 40px;
+    height: 434px;
+    color: #FFFFFF;
+    left: 555px;
+    display: none;
+}
+nav ul li ul:hover{
+    color: #FFFFFF;
+}
+nav ul li ul li{
+    width: 100%;
+}
+nav ul li ul li{
+    left: 180px;
+    top: 0;
+}
+
+nav ul li ul {
+    display: initial;
+}
+
+
+
+
+.flort{ 
+    margin-top: 100px; 
+      width: 375px; 
+      margin: auto; 
+  } 
+  .ewqewwj{ 
+    margin-top: 50px; 
+  font-family: Montserrat; 
+  font-size: 24px; 
+  font-weight: 700; 
+  line-height: 29.26px; 
+  text-align: left; 
+  text-underline-position: from-font; 
+  text-decoration-skip-ink: none; 
+  text-align: center; 
+  } 
+  .carousel { 
+      position: relative; 
+      width: 286px;  
+      overflow: hidden; 
+      margin-left: 45px; 
+  } 
+   
+  .carousel-container { 
+      overflow: hidden; 
+  } 
+   
+  .carousel-track { 
+      display: flex; 
+      transition: transform 0.5s ease-in-out;  
+  } 
+   
+  .carousel-image { 
+      width: 100%;  
+      flex-shrink: 0;  
+  } 
+   
+  .carousel-button { 
+      width: 50px; 
+      position: absolute; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      background-color: #F7D05E; 
+      border: none; 
+      cursor: pointer; 
+      padding: 20px; 
+      border-radius: 50%; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+      z-index: 1; 
+   
+  } 
+   
+  .carousel-button.prev { 
+      left: 2px ; 
+  } 
+   
+  .carousel-button.next { 
+      right: 2px; 
+  } 
+   
+  .carousel-button:focus { 
+      outline: none; 
+  } 
+  .uopi{ 
+  font-family: Montserrat; 
+  font-size: 20px; 
+  font-weight: 600; 
+  line-height: 24.38px; 
+  text-align: left; 
+  text-underline-position: from-font; 
+  text-decoration-skip-ink: none; 
+  text-align: center; 
+  color: #5A5A5A; 
+  }
+
+
+
+
+  
