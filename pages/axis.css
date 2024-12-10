@@ -1,0 +1,61 @@
+html,body{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container{
+    padding: 75px 0;
+    margin: 0 auto;
+    width: 1140px;
+  }
+  
+  h1{
+    position: relative;
+    margin-bottom: 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    color: #424242;
+  }
+  
+  .gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: flex 0.8s ease;
+
+    
+    &:hover{
+      flex: 7;
+    }
+  }
+  
+  .item-1 { 
+    background-image: url('https://basket-16.wbbasket.ru/vol2540/part254083/254083704/images/big/1.webp');
+  }
+  
+  .item-2 { 
+    background-image: url('https://basket-16.wbbasket.ru/vol2574/part257452/257452788/images/c516x688/2.webp');
+  }
+  
+  .item-3 { 
+    background-image: url('https://basket-17.wbbasket.ru/vol2663/part266386/266386731/images/c516x688/1.webp');
+  }
+  
+  .item-4 { 
+    background-image: url('https://basket-18.wbbasket.ru/vol2941/part294139/294139554/images/c516x688/2.webp');
+  }
+  
+  .item-5 { 
+    background-image: url('https://basket-18.wbbasket.ru/vol2941/part294157/294157240/images/c516x688/1.webp');
+  }
+  

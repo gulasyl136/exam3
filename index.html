@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          position: relative; /* Для абсолютного позиционирования всплывающего окна */
+      }
+      .popup {
+          display: none; /* Скрываем всплывающее окно по умолчанию */
+          position: absolute; /* Абсолютное позиционирование */
+          top: 50%; /* Центрируем по вертикали */
+          left: 50%; /* Центрируем по горизонтали */
+          transform: translate(-50%, -50%); /* Смещение для центрирования */
+          background-color: white; /* Цвет фона окна */
+          border: 1px solid #ccc; /* Граница окна */
+          border-radius: 10px; /* Скругление углов */
+          padding: 20px; /* Отступы внутри окна */
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Тень для окна */
+          z-index: 1000; /* Поверх других элементов */
+          
+      }
+      .popup h2 {
+          margin: 0 0 10px; /* Отступы для заголовка */
+      }
+      .popup button {
+          background-color: #007BFF; /* Цвет кнопки закрытия */
+          color: white; /* Цвет текста кнопки */
+          border: none; /* Убираем границу */
+          border-radius: 5px; /* Скругление углов кнопки */
+          padding: 10px 15px; /* Отступы внутри кнопки */
+          cursor: pointer; /* Курсор при наведении */
+      }
+      .popup button:hover {
+          background-color: #0056b3; /* Цвет кнопки при наведении */
+      }
+  </style>
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
@@ -14,142 +49,109 @@
       }
     </style>
 </head>
-<body class="bg-[]">
-    <header class="">
-      <div class="w-[1920px] h-[66px] my-[30px] m-auto bg-[#F4F4F4]">
-        <div class="flex">
-        <div class="flex ml-[201px] mt-[20px]">
-        <img src="./img/местополож.svg" alt="" >
-        <h5 class="text-[#33394F] text-gray-900 hover:text-blue-900 hover:underline ml-[15px]">г. Москва, Электролитный проезд 3Б стр 6</h5></div>
-        <img src="./img/phone.svg" alt="" class="ml-[40px] mt-[20px]">
-        <h5 class="text-[#33394F] text-gray-900 hover:text-blue-900 hover:underline mt-[20px] ml-[15px]">+7 916 361-30-00</h5></div>
-        <div class="ml-[900px]">
-        <nav>
-          <ul class="flex text-[#A3A6AF] gap-[48px] mt-[-20px]">
-        <li class="flex hover:text-[#33394F] hover:font-semibold"><a href="#">Каталог</a><img src="./img/treug.svg" alt="" class=" ml-[5px] mt-[3px]">
-        <ul>
-          <div class="flex mt-[30px]">
-          <div class="ml-[190px] hover:text-[#FFFFFF]">
-          <li class="font-semibold"><a href="#">ОДЕЖДА</a></li>
-          <li class="mt-[15px] font-semibold"><a href="#">Изделия из муслина</a></li>
-          <li class="mt-[10px] text-[#FFFFFFA1]  hover:text-[#FFFFFF]"><a href="#">Боди</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Песочники</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Нательные комбинезоны (слипы)</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны из футера</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны вязаные</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Демисезонные комбинезоны</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны-трансформеры</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Головные уборы</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Носочки</a></li>
-          <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Нагрудники</a></div>
-            <div class="ml-[80px] hover:text-[#FFFFFF]">
-              <li class=" font-semibold"><a href="#">ПЕЛЕНКИ</a></li>
-              <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Пеленальные коконы</a></li>
-              <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из фланели</a></li>
-              <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из муслина</a></li>
-              <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из интерлока</a></li>
-            </div>
-            <div class="ml-[130px] hover:text-[#FFFFFF]">
-              <li class=" font-semibold"><a href="#">КОНВЕРТЫ И ПЛЕДЫ</a></li>
-              <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Конверты в коляску</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пледы</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Конверты на выписку</a></li>
-            </div>
-            <div class="ml-[180px] hover:text-[#FFFFFF]">
-              <li class=" font-semibold"><a href="#">АКСЕССУАРЫ</a></li>
-              <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Сумки-органайзеры</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Муфты-варежки</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Грызунки</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Альбомы для фотографий</a></li>
-              <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Держатели для соски/грузунка</a></li>
-            </div>
-            <div class="ml-[150px]">
-              <li  class=" font-semibold"><a href="#"><a href="./pages/ready.html">ГОТОВЫЕ ПОДБОРКИ</a></a></li>
-            </div>
+<body class="bg-lime-100">
+      <header class="">
+            <div class="w-[1920px] h-[66px] my-[30px] m-auto bg-[#F4F4F4]">
+              <div class="flex">
+              <div class="flex ml-[201px] mt-[20px]">
+              <img src="./img/местополож.svg" alt="" >
+              <h5 class="text-[#33394F] text-gray-900 hover:text-blue-900 hover:underline ml-[15px]">г. Москва, Электролитный проезд 3Б стр 6</h5></div>
+              <img src="./img/phone.svg" alt="" class="ml-[40px] mt-[20px]">
+              <h5 class="text-[#33394F] text-gray-900 hover:text-blue-900 hover:underline mt-[20px] ml-[15px]"><a href="tel:+79163613000" id="phone-number">+7 916 361-30-00</a></h5></div>
+              <div class="ml-[900px]">
+              <nav>
+                <ul class="flex text-[#A3A6AF] gap-[48px] mt-[-20px]">
+                  <li class="flex hover:text-[#33394F] hover:font-semibold">
+                    <a href="#" id="catalogLink">Каталог</a>
+                    <img src="./img/treug.svg" alt="" class="ml-[5px] mt-[3px]">
+                </li>
+                <div id="modal" class="modal hidden">
+                    <div class="modal-content">
+                      <span id="closeBtn" class="close">&times;</span>
+                         <div class="flex mt-[30px]">
+                <div class="ml-[190px] hover:text-[#FFFFFF]">
+                <li class="font-semibold"><a href="#">ОДЕЖДА</a></li>
+                <li class="mt-[15px] font-semibold"><a href="#">Изделия из муслина</a></li>
+                <li class="mt-[10px] text-[#FFFFFFA1]  hover:text-[#FFFFFF]"><a href="#">Боди</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Песочники</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Нательные комбинезоны (слипы)</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны из футера</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны вязаные</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Демисезонные комбинезоны</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Комбинезоны-трансформеры</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Головные уборы</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Носочки</a></li>
+                <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Нагрудники</a></div>
+                  <div class="ml-[80px] hover:text-[#FFFFFF]">
+                    <li class=" font-semibold"><a href="#">ПЕЛЕНКИ</a></li>
+                    <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Пеленальные коконы</a></li>
+                    <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из фланели</a></li>
+                    <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из муслина</a></li>
+                    <li  class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пеленки из интерлока</a></li>
+                  </div>
+                  <div class="ml-[130px] hover:text-[#FFFFFF]">
+                    <li class=" font-semibold"><a href="#">КОНВЕРТЫ И ПЛЕДЫ</a></li>
+                    <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Конверты в коляску</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Пледы</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Конверты на выписку</a></li>
+                  </div>
+                  <div class="ml-[180px] hover:text-[#FFFFFF]">
+                    <li class=" font-semibold"><a href="#">АКСЕССУАРЫ</a></li>
+                    <li class="mt-[15px] text-[#FFFFFFA1]"><a href="#">Сумки-органайзеры</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Муфты-варежки</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Грызунки</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Альбомы для фотографий</a></li>
+                    <li class="mt-[3px] text-[#FFFFFFA1]"><a href="#">Держатели для соски/грузунка</a></li>
+                  </div> 
+                  <div class="ml-[150px]">
+                    <li  class=" hover:text-[#FFFFFF] font-semibold"><a href="#"><a href="./pages/ready.html">ГОТОВЫЕ ПОДБОРКИ</a></a></li>
+                  </div>
+                    </div>
+                </div>
+              <ul>
+                </div>
+              </li>
+              <li class="hover:font-semibold hover:text-[#33394F]"><a href="#">Главная</a></li>
+              <li class="hover:text-[#33394F] hover:font-semibold"><a href="./pages/where.html">Как купить</a>
+              <li class="hover:text-[#33394F] hover:font-semibold"><a href="./pages/dost.html">Доставка</a></li>
+              <li class="hover:text-[#33394F] hover:font-semibold"><a href="./pages/okomp.html">О компании</a></li>
+              <li class="hover:text-[#33394F] hover:font-semibold"><a href="https://www.instagram.com/lalastore.ru/?hl=en">Мы в instagram</a></li>
+              <li class="hover:text-[#33394F] hover:font-semibold"><a href="./pages/aksi.html">Акции</a></li>
+             </ul>
+            </nav>
           </div>
-          <!-- <ul>
-            <li><a href="#">gulasyl</a></li>
-            <li><a href="#">aidana</a></li>
-          </ul> -->
-        </li>
-        </ul>
-        <li class="hover:font-semibold hover:text-[#33394F]"><a href="#">Главная</a></li>
-        <li class="hover:text-[#33394F] hover:font-semibold"><a href="#">Где купить</a>
-        <!-- <u>
-          <li><a href="#">aiba</a></li>
-          <li><a href="#">bro</a></li>
-        </u></li> -->
-        <li class="hover:text-[#33394F] hover:font-semibold"><a href="#">Доставка</a></li>
-        <li class="hover:text-[#33394F] hover:font-semibold"><a href="#">О компании</a></li>
-        <li class="hover:text-[#33394F] hover:font-semibold"><a href="#">Мы в instagram</a></li>
-        <li class="hover:text-[#33394F] hover:font-semibold"><a href="#">Акции</a></li>
-      </ul>
-      </nav>
-    </div>
-      </div>
-      <div class="w-[1920px] h-[97px] m-auto flex mb-[50px]">
-        <img src="./img/picinput.svg" alt="" class="ml-[201px]">
-        <!-- <form class="bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-bold mb-4">Форма ввода</h2>
-  
-          <label for="name" class="block text-sm font-medium text-gray-700">Имя:</label>
-          <input type="text" id="name" name="name" placeholder="Введите ваше имя" 
-                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 mb-4">
-  
-          <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Введите ваш email"
-                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 mb-4">
-  
-          <label for="password" class="block text-sm font-medium text-gray-700">Пароль:</label>
-          <input type="password" id="password" name="password" placeholder="Введите ваш пароль"
-                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 mb-4">
-  
-          <label for="age" class="block text-sm font-medium text-gray-700">Возраст:</label>
-          <input type="number" id="age" name="age" placeholder="Введите ваш возраст"
-                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 mb-4">
-  
-          <button type="submit" 
-                  class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition duration-200">
-              Отправить
-          </button>
-      </form> -->
-      <input type="text" class="w-[646px] outline-none ml-[30px] mt-[18px] bg-[#F4F4F4] h-[45px] text-[#A3A6AF] border-none top-[50px] rounded-[40px] pl-[65px]" placeholder="Начните писать ">
-      
-      <button class="w-[150px] mt-[18px] ml-[-30px] h-12 top-[8px] bg-[#F7D05E] rounded-[8px] hover:bg-orange-300 text-white">Найти</button>
-      <!-- <div class="dropdown">
-        <button class="dropbtn"></button>
-        <div class="dropdown-content">
-            <a href="#">Детские пеленки</a>
-            <a href="#">Конверты на выписку для мальчика </a>
-            <a href="#">Соски</a>
-            <a href="#">Грызунки</a>
-        </div>
-    </div> -->
-      <img src="./img/search.svg" alt="" class="ml-[-740px] mt-[28px] w-[24px] h-[25px]">
-      <div class="w-[34px] gap-[30px] ml-[750px] justify-between flex ">
-      <a href="./pages/buy/buy.html">
-        <div class="w-[35px] mt-[30px]">
-          <img src="./img/like.svg" alt="" width="35">
-        </div>
-      </a>
-      <img src="./img/korzina.svg" alt="">
-    <a href="./pages/profile.html">
-      <div class="w-[35px] mt-[20px]">
-      <img src="./img/contact.svg" alt="" width="35"></div>
-    </a>
-    </div>
-    <div class="mt-[35px] ml-[170px]">
-      
-    <a href="./pages/signin/signin.html" class="ml-[15px]  "><button class=" font-semibold border hover:bg-green-400 hover:text-[white] hover:border-none rounded-[10px] w-[80px] h-[40px]">Sign In</button></a>
-                <a href="./pages/signup/signup.html" class="ml-[15px] hover:text-green-800"><button class="bg-green-400 hover:bg-green-300 text-white font-semibold rounded-[10px] w-[80px] h-[40px]">Sign Up</button></a>
-
-
-
-      </div>
-    </header>
+            </div>
+            <div class="w-[1920px] h-[97px] flex m-auto">
+              <img src="./img/lalastore.png" alt="" class="ml-[200px]">
+              <input type="text" class=" outline-none ml-[30px] mt-[26px] w-[646px] bg-[#F4F4F4] h-[45px] text-[#818492] rounded-[22px]  pl-[65px]" placeholder="Начните писать">
+              <button class="w-[154px] mt-[26px] bg-[#F7D05E] absolute text-white ml-[1100px] hover:bg-orange-200 rounded-[22px] h-[45px]">Найти</button>
+            <div class=" justify-between gap-[35px] ml-[80px] flex">
+            <a href="./pages/like/like.html">
+              <div class="w-[35px] mt-[30px] ">
+                  <img src="./img/likephoto.png" alt="" width="35px">
+                  <div id="photoList"></div>
+              </div>
+          </a>
+            <a href="./pages/delete.html">
+              <div class="w-[35px] mt-[30px] ">
+                  <img src="./img/full-trash.png" alt="" width="35px">
+                  <div id="photoList"></div>
+              </div>
+          </a>
+          <a href="./pages/profile.html">
+            <div class="w-[35px] mt-[30px]">
+            <img src="./img/contact.svg" alt="" width="35"></div>
+          </a>
+          <div class="ml-[65px] mt-[30px]">
+            <button class=" font-semibold border hover:bg-green-400 hover:text-[white] hover:border-none rounded-[10px] w-[80px] h-[40px]"><a href="./pages/signin/signin.html">SignIn</a></button>
+            <button class="bg-green-400 hover:bg-green-300 text-white font-semibold rounded-[10px] w-[80px] h-[40px] "><a href="./pages/signup/signup.html">SignUp</a></button>
+          </div>
+          </div>
+            </div>
+          </header>
     <main>
         <section>
-          <div class="w-[1920px] m-auto flex">
+          <div class="w-[1920px] mt-[30px] m-auto flex">
             <div>
             <img src="./img/sec1pic1.png" alt="" class="ml-[201px] w-[1181px] h-[358px]">
             <h1 class="font-bold size-9  ml-[260px] mt-[-210px] text-[#33394F] text-2xl w-[300px]">Большая зимняя распродажа от LeoKid</h1>
@@ -171,45 +173,37 @@
             <h1 class="font-semibold text-2xl ml-[100px] capitalize mt-[-20px]">Каталог</h1></div>
             <img src="./img/linia.png" alt="" class="w-[801px] ml-[120px]">
           </div>
-          <!-- <a href="#" class="">LOGO</a>
-          <nav>
-            <ul>
-              <li><a href="#">Аксессуары</a></li>
-              <li><a href="#">Конверты и пледы</a></li>
-              <li><a href="#">Одежда</a></li>
-              <li><a href="#">Пеленки</a></li>
-              <li><a href="#">Готовые подборки</a></li>
-            </ul>
-          </nav> -->
-          <div class="flex absolute ">
+          <div class="flex absolute">
           <img src="./img/baby1.png" alt="" class="mt-[73px] ml-[201px]"> 
-           <button class="hover:bg-orange-200 absolute w-[365px] h-[77px] bg-[#F7D05E] text-[white] font-semibold mt-[654px] ml-[200px]">АКСЕССУАРЫ<img src="./img/treugg.svg" alt="" class="ml-[246px] mt-[-16px]"></button>
+           <button class="w-[365px] h-[77px] bg-[#F7D05E] absolute hover:bg-orange-200 ml-[200px] text-white font-semibold mt-[660px]">АКСЕССУАРЫ  ></button>
 
           <img src="./img/baby2.png" alt="" class="w-[622px] h-[279px] mt-[73px] ml-[20px]">
-          <button class=" absolute hover:bg-orange-200 w-[622px] h-[77px] bg-[#F7D05E] text-[white] font-semibold mt-[346px] ml-[587px]">КОНВЕРТЫ И ПЛЕДЫ<img src="./img/treugg.svg" alt="" class="ml-[401px] mt-[-16px]"></button>
+          <button class=" absolute hover:bg-orange-200 w-[622px] h-[77px] bg-[#F7D05E] text-[white] ml-[585px] mt-[300px] font-semibold">КОНВЕРТЫ И ПЛЕДЫ  ></button>
           <img src="./img/baby3.png" alt="" class="w-[301px] h-[203px] mt-[450px] ml-[-625px]">
-          <button class="hover:bg-orange-200 absolute w-[301px] h-[77px] bg-[#F7D05E] text-[white] font-semibold mt-[650px] ml-[583px]">ОДЕЖДА<img src="./img/treugg.svg" alt="" class="ml-[200px] mt-[-16px]"></button>
+          <button class="hover:bg-orange-200 absolute w-[301px] h-[77px] bg-[#F7D05E] text-[white] ml-[585px] font-semibold mt-[653px]">ОДЕЖДА  ></button>
           <img src="./img/baby4.png" alt="" class="w-[301px] h-[280px] mt-[450px] ml-[20px]">
-          <button class="hover:bg-orange-200 absolute w-[301px] h-[77px] bg-[#F7D05E] text-[white] font-semibold mt-[650px] ml-[904px]">ПЕЛЕНКИ<img src="./img/treugg.svg" alt="" class="ml-[200px] mt-[-16px]"></button>
+          <button class="hover:bg-orange-200 absolute w-[301px] h-[77px] bg-[#F7D05E] text-[white] ml-[905px] mt-[655px] font-semibold" id="openPopup">ПЕЛЕНКИ ></button> <div class="popup" id="popup">
+          <h2 class="hover:bg-orange-200"><a href="./pages/bodi.html">Боди</a></h2>
+          <h2 class="hover:bg-orange-200">Нательные комбизнезоны (слипы)</h2>
+          <h2 class="hover:bg-orange-200">Комбинезоны из футера</h2>
+          <h2 class="hover:bg-orange-200">Комбинезоны вязаные</h2>
+          <h2 class="hover:bg-orange-200">Демисезонные комбинезоны</h2>
+          <h2 class="hover:bg-orange-200">Носочки</h2>
+          <h2 class="hover:bg-orange-200">Изделия из муслина</h2>
+          <button id="closePopup">Закрыть</button>
+      </div>
           <img src="./img/baby5.png" alt="" class="w-[493px] h-[579px] ml-[20px] mt-[73px]">
-          <button class="hover:bg-orange-200 absolute w-[493px] h-[77px] bg-[#F7D05E] text-[white] font-semibold mt-[648px] ml-[1225px]">ГОТОВЫЕ ПОДБОРКИ<img src="./img/treugg.svg" alt="" class="ml-[340px] mt-[-16px]"></button>
+          <button class="hover:bg-orange-200 absolute w-[493px] h-[77px] bg-[#F7D05E] text-[white] font-semibold ml-[1224px] mt-[645px]">ГОТОВЫЕ ПОДБОРКИ  ></button>
         </div>
-        <!-- <div class="dropdown">
-          <button class="dropbtn">Меню</button>
-          <div class="dropdown-content">
-              <a href="#">Детские пеленки</a>
-              <a href="#">Конверты на выписку для мальчика </a>
-              <a href="#">Соски</a>
-              <a href="#">Грызунки</a>
-          </div>
-      </div> -->
+       
           </div>
         </section>
         <section>
           <div id="gl" class="w-[1920px] h-[351px] m-auto mt-[800px] flex gap-[1px] px-[185px]"></div>
+          <a href="./"></a>
         </section>
         <section>
-          <div class="w-[1920px] h-[628px] m-auto relative"> 
+          <div class="w-[1920px] h-[700px] bg-[#F4F4F4] m-auto relative"> 
             <div class="bg-[#f9f9f9] mt-[30px] p-[20px] border solid-[#ddd]"> 
               <h2>Адрес шоурума</h2> 
    
@@ -223,63 +217,105 @@
             <p><strong>Режим работы:</strong> Вторник-суббота: 10:00-19:00</p> 
             <p><strong>Телефон:</strong> +7 916 361-30-00</p> 
             <p><strong>Email:</strong> info@lastore.ru</p></div> 
-        </div> 
+        </div>
+        <h1 class="mt-[420px] text-center font-semibold text-4xl text-[#33394F]">Подпишитесь на нашу рассылку</h1>
+        <p class="text-[#33394F9E] text-center mt-[20px]">Присоединяйтесь к программе LFLF STORE, чтобы получать постоянные скидки и персональные предложения</p>
+        <button class="w-[195px] h-[45px] rounded-[22px] ml-[850px] mt-[20px] bg-[#F7D05E] text-white hover:bg-orange-200"><a href="./pages/search.html">оформить подписку</a></button>
         </div> 
         </section>
         <section>
-          <div class="w-[1920px] h-[298px] m-auto bg-[#F4F4F4]">
-            <div class="mt-[-180px]">
-            <h1 class=" font-semibold text-4xl text-center">Подпишитесь на нашу рассылку</h1>
-            <p class="text-center text-[#33394F9E] w-[500px] h-[54px] ml-[700px] font-normal mt-[75px]">Присоединяйтесь к программе LFLF STORE, чтобы получать постоянные скидки и персональные предложения</p>
-            <button class="rounded-[22px] hover:bg-orange-200 bg-[#F7D05E] ml-[801px] mt-[36px] text-white w-[301px] h-[45px]" >
-              <img src="./img/strelka.png" alt="" class="ml-[40px]">
-          </button></div>
+          <div class="w-[1920px] m-auto">
+            
           </div>
         </section>
         <section>
           <div class="w-[1920px] mt-[20px] h-[298px] m-auto">
-            <h1 class="text-center font-semibold text-4xl">О компании</h1>
+            <h1 class="text-center font-semibold  text-[#33394F] text-4xl">О компании</h1>
             <p class="w-[790px] mt-[25px] ml-[540px] text-[#33394F9E]">LalaStore - магазин качественной и модной одежды и товаров для новорожденных и малышей до года. 
               У нас вы подберете стильный комплект на выписку и базовый гардероб на первый год вашего ребенка.</p>
               <p class="text-[#33394F9E] mt-[25px] ml-[460px] w-[900px] text-nowrap">Качество товаров на высоте, так как мы работаем только с проверенными поставщиками. Все изделия имеют сертификаты качества.</p>
               <p class="text-[#33394F9E] mt-[25px] ml-[800px]">Нам доверяют, и к нам возвращаются!</p>
-              <div class="flex ml-[360px] gap-[200px] mt-[76px]">
-              <div>
-               <button class="ml-[40px] bg-[#F7D05E] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/saat.svg" alt="" class="ml-[13px]"></button>
-                <h4 class="ml-[20px] font-semibold ">Быстрая доставка</h4>
-                <p class="mt-[15px] text-[#33394F9E] leading-relaxed text-justify w-[230px] h-[50px]">Бережно доставляем товары
-                  по России за 24 часа</p>
+              <div class="flex ml-[440px] mt-[65px] gap-[160px]">
+              <div class=" border rounded-[10px] rounded-[100%] border-grey-100">
+              <button class="bg-[#F7D05E] transition-transform duration-500 hover:scale-110 ml-[90px] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/saat.svg" alt="" class="ml-[14px]"></button>
+              <h3 class="font-semibold text-center"><a href="./pages/dost.html">Быстрая доставка</a></h3>
+              <p class="text-[#33394F9E] text-center w-[265px]">Бережно доставляем товары
+                по России за 24 часа</p>
               </div>
-              <div class="ml-[30px]">
-                <button class="ml-[40px] bg-[#F7D05E] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/star.svg" alt=""  class="ml-[12px]"></button>
-                <h4 class="ml-[20px] font-semibold ">Быстрая доставка</h4>
-                <p class="mt-[15px] text-[#33394F9E] leading-relaxed text-justify w-[220px] h-[50px]">Соответствуем требованиям и стандартам качества</p>
+              <div class="transition-transform duration-500 hover:scale-110 border rounded-[10px] border-grey-100">
+                <button class="bg-[#F7D05E] ml-[90px] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/star.svg" alt="" class="ml-[14px]"></button>
+              <h3 class="font-semibold text-center">Гарантия качества</h3>
+              <p class="text-[#33394F9E] text-center w-[265px]">Соответствуем требованиям и стандартам качества</p>
               </div>
-              <div class="ml-[30px]">
-                <button class="ml-[40px] bg-[#F7D05E] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/pensil.svg" alt=""  class="ml-[16px]"></button>
-                <h4 class="font-semibold ml-[20px]">Доступные цены</h4>
-                <p class="mt-[15px] text-[#33394F9E] leading-relaxed text-justify w-[230px] h-[50px]">Работаем напрямую с ведущими производителями</p>
+              <div class="border transition-transform duration-500 hover:scale-110 rounded-[10px] border-grey-100">
+                <button class="bg-[#F7D05E] ml-[90px] hover:bg-orange-200 rounded-[100%] w-[84px] h-[84px]"><img src="./img/pensil.svg" alt="" class="ml-[14px]"></button>
+              <h3 class="font-semibold text-center">Доступные цены</h3>
+              <p class="text-[#33394F9E] text-center w-[265px]">Работаем напрямую с ведущими производителями</p>
               </div>
             </div>
             </div>
         </section>
         <section>
-          <div id="root" class=" w-[1920px] h-[557px] mt-[288px] bg-[#F4F4F4] m-auto gap-[30px] flex justify-between cursor-pointer">
-            <h1 class="text-[#33394F] font-semibold text-4xl ml-[200px] mt-[35px]">Ранее вы смотрели</h1>
+          <div class="w-[1920px] mt-[200px] bg-[#F4F4F4] h-[557px] m-auto">
+            <h1 class="ml-[200px] font-semibold mt-[35px] text-[#33394F] text-3xl">Ранее вы смотрели</h1>
+          
+            <div class="flex gap-[30px] mt-[20px]">
+              <div class="w-[237px] border border-white-500 rounded-[15px] ml-[200px] m-auto">
+                <img src="../img/a1.png" alt="" class="w-[231px]">
+                <h4 class="w-[215px] h-[40px] font-semibold text-xl ml-[20px] align-center">Боди без рукавов <span class="text-green-500 font-bold"> "ФРУК-ТИК"</span>, розовый</h4>
+                <h3 class="w-[90px] h-[20px] mt-[55px] ml-[60px] font-semibold text-xl"> <span class="text-red-600 font-bold">349 ₽/шт</span></h3>
+                <button id="add-to-cart" class="w-[231px] h-[43px] bg-[#F7D05E] text-white rounded-[94px] hover:bg-orange-200 mt-[21px]">
+                    <img src="./img/lorzina.png" alt="" class="w-[30px] ml-[100px]">
+                </button>
             </div>
+            <div class="w-[237px] border border-white-500 rounded-[15px] m-auto">
+              <img src="../img/a1.png" alt="" class="w-[231px]">
+              <h4 class="w-[215px] h-[40px] font-semibold text-xl ml-[20px] align-center">Боди без рукавов <span class="text-green-500 font-bold"> "ФРУК-ТИК"</span>, розовый</h4>
+              <h3 class="w-[90px] h-[20px] mt-[55px] ml-[60px] font-semibold text-xl"> <span class="text-red-600 font-bold">349 ₽/шт</span></h3>
+              <button id="add-to-cart" class="w-[231px] h-[43px] bg-[#F7D05E] text-white rounded-[94px] hover:bg-orange-200 mt-[21px]">
+                  <img src="./img/lorzina.png" alt="" class="w-[30px] ml-[100px]">
+              </button>
+          </div>
+          <div class="w-[237px] border border-white-500 rounded-[15px] m-auto">
+            <img src="../img/a1.png" alt="" class="w-[231px]">
+            <h4 class="w-[215px] h-[40px] font-semibold text-xl ml-[20px] align-center">Боди без рукавов <span class="text-green-500 font-bold"> "ФРУК-ТИК"</span>, розовый</h4>
+            <h3 class="w-[90px] h-[20px] mt-[55px] ml-[60px] font-semibold text-xl"> <span class="text-red-600 font-bold">349 ₽/шт</span></h3>
+            <button id="add-to-cart" class="w-[231px] h-[43px] bg-[#F7D05E] text-white rounded-[94px] hover:bg-orange-200 mt-[21px]">
+                <img src="./img/lorzina.png" alt="" class="w-[30px] ml-[100px]">
+            </button>
+        </div>
+        <div class="w-[237px] border border-white-500 rounded-[15px] m-auto">
+          <img src="../img/a1.png" alt="" class="w-[231px]">
+          <h4 class="w-[215px] h-[40px] font-semibold text-xl ml-[20px] align-center">Боди без рукавов <span class="text-green-500 font-bold"> "ФРУК-ТИК"</span>, розовый</h4>
+          <h3 class="w-[90px] h-[20px] mt-[55px] ml-[60px] font-semibold text-xl"> <span class="text-red-600 font-bold">349 ₽/шт</span></h3>
+          <button id="add-to-cart" class="w-[231px] h-[43px] bg-[#F7D05E] text-white rounded-[94px] hover:bg-orange-200 mt-[21px]">
+              <img src="./img/lorzina.png" alt="" class="w-[30px] ml-[100px]">
+          </button>
+      </div>
+      <div class="w-[237px] border border-white-500 rounded-[15px] m-auto">
+        <img src="../img/a1.png" alt="" class="w-[231px]">
+        <h4 class="w-[215px] h-[40px] font-semibold text-xl ml-[20px] align-center">Боди без рукавов <span class="text-green-500 font-bold"> "ФРУК-ТИК"</span>, розовый</h4>
+        <h3 class="w-[90px] h-[20px] mt-[55px] ml-[60px] font-semibold text-xl"> <span class="text-red-600 font-bold">349 ₽/шт</span></h3>
+        <button id="add-to-cart" class="w-[231px] h-[43px] bg-[#F7D05E] text-white rounded-[94px] hover:bg-orange-200 mt-[21px]">
+            <img src="./img/lorzina.png" alt="" class="w-[30px] ml-[100px]">
+        </button>
+    </div>
+          </div>
+      </div>
+          </div>
         </section>
         <section>
           <div class="w-[1920px] mt-[90px]  m-auto">
             <h1 class="font-semibold text-center text-4xl">Подписаться на рассылку</h1>
             <h6 class="text-[#818492] ml-[662px] mt-[30px]">Почта</h6>
             <input type="text" class="ml-[662px] outline-none mt-[6px] w-[542px] bg-[#F4F4F4] h-[40px] text-[#818492] rounded-[5px]  pl-[65px]" placeholder="e-mail.com">
-            <a href="./pages/profile.html"><button class="w-[154px] hover:bg-orange-200 h-[37px] absolute bg-[#F7D05E] rounded-[22px] ml-[-100px] mt-[6px] text-white">Найти</button></a>
+            <a href="./pages/search.html"><button class="w-[171px] bg-[#F7D05E] text-white hover:bg-orange-200 mt-[3px] rounded-[22px] absolute ml-[-20px] h-[43px]">Найти</button></a>
 
           </div>
         </section>
       </main>
       <footer>
-        <div class="w-[1920px] mt-[90px] m-auto">
+        <div class="w-[1920px] bg-neutral-300 mt-[90px] m-auto  ">
           <img src="./img/line.png" alt="" class="mt-[71px]">
           <nav>
             <ul>
@@ -313,7 +349,7 @@
               </div>
               <h2 class="text-[#33394F6B]  text-gray-900 hover:text-blue-900 hover:underline  underline mt-[25px] ml-[370px]">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h2>
             </div>
-             <div class="ml-[363px] mt-[35px]">
+             <div class="ml-[363px] mt-[1px]">
             <div class="flex mt-[]">
               <img src="./img/address.svg" alt="" class = "">
               <p class="text-[#33394F9E]  text-gray-900 hover:text-blue-900 hover:underline  w-[248px] ml-[16px] h-[48px]">Адрес шоурума:, г. Москва, Электролитный проезд 3Б стр 6</p>

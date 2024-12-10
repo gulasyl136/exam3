@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .product {
+          margin-bottom: 20px;
+      }
+      .cart {
+          margin-top: 50px;
+          border-top: 1px solid #ccc;
+          padding-top: 20px;
+      }
+  </style>
+</head>
+<body class="bg-lime-100">
+
+<h1>Магазин</h1>
+
+<div class="product">
+  <h2>Товар 1</h2>
+  <p>Цена: 500 ₽</p>
+  <button onclick="addToCart({ name: 'Товар 1', price: 500 })">Добавить в корзину</button>
+</div>
+
+<div class="product">
+  <h2>Товар 2</h2>
+  <p>Цена: 300 ₽</p>
+  <button onclick="addToCart({ name: 'Товар 2', price: 300 })">Добавить в корзину</button>
+</div>
+
+<div id="cart" class="cart">
+  <h2>Корзина</h2>
+  <div id="cart-items"></div>
+</div>
+
+</head>
+<body>
+  
+    <script src="./buy.js"></script>
+</body>
+</html>

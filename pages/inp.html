@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Центрирование по горизонтали */
+            align-items: center; /* Центрирование по вертикали */
+            height: 100vh; /* Высота на весь экран */
+        }
+        .input-container {
+            text-align: center; /* Центрируем текст */
+        }
+        .input-field {
+            width: 700px; /* Ширина инпута */
+            height: 45px; /* Высота инпута */
+            padding-left: 65px; /* Отступ слева */
+            border: 1px solid #d1d5db; /* Цвет границы */
+            border-radius: 22px; /* Скругление углов */
+            font-size: 16px; /* Размер шрифта */
+            outline: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+</head>
+<body class="bg-lime-100">
+    <div class="input-container">
+        <input type="text" class="input-field" placeholder="Ваш отзыв">
+    </div>
+    <button class="w-[150px] mt-[1px] ml-[-30px] h-12 top-[8px] bg-[#F7D05E] rounded-[8px] hover:bg-orange-300 text-white">Отправить</button>
+            
+            
+    <script src="./inp.js"></script>
+</body>
+</html>

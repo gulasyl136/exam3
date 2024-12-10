@@ -10,112 +10,85 @@ color: rgb(226, 59, 59);}
     transform: scale(1,2);
     
 }
-nav ul li ul{
-    position: absolute;
-    margin: auto;
-    left: 0;
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    margin-top: 300px;
     width: 1920px;
-    background-color: #2D3242;
-    margin-top: 40px;
     height: 434px;
-    color: #FFFFFF;
-    left: 555px;
-    display: none;
-}
-nav ul li ul:hover{
-    color: #FFFFFF;
-}
-nav ul li ul li{
-    width: 100%;
-}
-nav ul li ul li{
-    left: 180px;
-    top: 0;
+    background-color: rgba(0, 0, 0, 0.748);
+    transform: translate(-50%, -50%); 
 }
 
-nav ul li ul {
-    display: initial;
+.modal-content {
+    border-radius: 5px; 
 }
 
 
+/* 
+.w-[1920px] { width: 1920px; }
+      .h-[557px] { height: 557px; }
+      .bg-[#F4F4F4] { background-color: #F4F4F4; }
+      .text-red-600 { color: red; }
+      .text-green-500 { color: green; }
+      .hover:bg-orange-200:hover { background-color: orange; } */
 
 
-.flort{ 
-    margin-top: 100px; 
-      width: 375px; 
-      margin: auto; 
-  } 
-  .ewqewwj{ 
-    margin-top: 50px; 
-  font-family: Montserrat; 
-  font-size: 24px; 
-  font-weight: 700; 
-  line-height: 29.26px; 
-  text-align: left; 
-  text-underline-position: from-font; 
-  text-decoration-skip-ink: none; 
-  text-align: center; 
-  } 
-  .carousel { 
-      position: relative; 
-      width: 286px;  
-      overflow: hidden; 
-      margin-left: 45px; 
-  } 
-   
-  .carousel-container { 
-      overflow: hidden; 
-  } 
-   
-  .carousel-track { 
-      display: flex; 
-      transition: transform 0.5s ease-in-out;  
-  } 
-   
-  .carousel-image { 
-      width: 100%;  
-      flex-shrink: 0;  
-  } 
-   
-  .carousel-button { 
-      width: 50px; 
-      position: absolute; 
-      top: 50%; 
-      transform: translateY(-50%); 
-      background-color: #F7D05E; 
-      border: none; 
-      cursor: pointer; 
-      padding: 20px; 
-      border-radius: 50%; 
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-      z-index: 1; 
-   
-  } 
-   
-  .carousel-button.prev { 
-      left: 2px ; 
-  } 
-   
-  .carousel-button.next { 
-      right: 2px; 
-  } 
-   
-  .carousel-button:focus { 
-      outline: none; 
-  } 
-  .uopi{ 
-  font-family: Montserrat; 
-  font-size: 20px; 
-  font-weight: 600; 
-  line-height: 24.38px; 
-  text-align: left; 
-  text-underline-position: from-font; 
-  text-decoration-skip-ink: none; 
-  text-align: center; 
-  color: #5A5A5A; 
-  }
+    
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          margin: 0;
+          padding: 20px;
+      }
+      .discount-section {
+          max-width: 1920px;
+          margin: 0 auto;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+      }
+      .discount-section h2 {
+          color: #ff6347; /* Цвет заголовка */
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .discount-item {
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #eaeaea;
+          padding: 10px 0;
+          margin-left: 200px;
+      }
+      .discount-item:last-child {
+          border-bottom: none; /* Убираем нижнюю границу у последнего элемента */
+      }
+      .item-image {
+          width: 150px; /* Ширина изображения */
+          height: auto; /* Автоматическая высота */
+          margin-right: 20px; /* Отступ справа от изображения */
+      }
+      .item-details {
+          flex-grow: 1; /* Занимает оставшееся пространство */
+      }
+      .item-name {
+          font-size: 18px;
+          color: #333;
+      }
+      .item-price {
+          font-size: 16px;
+          color: #888;
+          text-decoration: line-through; /* Зачеркнутая цена */
+      }
+      .item-discount-price {
+          font-size: 20px;
+          color: #ff6347; /* Цвет скидочной цены */
+      }
 
-
-
-
-  
